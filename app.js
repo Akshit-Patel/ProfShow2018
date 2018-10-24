@@ -90,6 +90,7 @@ function moveTouch(e) {
   initialY = null;
    
   e.preventDefault();
+  
 };
 
 
