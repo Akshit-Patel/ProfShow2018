@@ -349,7 +349,7 @@ a:hover {
 	color: rgb(122, 120, 120);
    font-family: Roboto;
    padding-top: 3vh;
-   overflow: scroll;
+   overflow: auto;
    height: 40vh;
 }
 
@@ -522,7 +522,7 @@ a:hover {
 	font-size: 3vw;
 	color: rgb(122, 120, 120);
 	padding-top: 1vh;
-	overflow:scroll;
+	overflow:auto;
 	height: 20vh;
 	}
 }
