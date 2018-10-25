@@ -240,7 +240,7 @@ img {
 	display: none;
 	opacity: 0;
 	transition: 0.5s;
-    padding-top: 6.5vh;
+    padding-top: 6.75vh;
 }
 #contactDetails h1 {
 	color: white;
@@ -269,7 +269,7 @@ h4 {
 	opacity:0;
 	transition: 1s;
 	position: relative;
-	top: -2vh;
+	top: -6vh;
 }
 .details h4
 {
@@ -350,7 +350,7 @@ a:hover {
    font-family: Roboto;
    padding-top: 3vh;
    overflow: scroll;
-   height:40vh;
+   height: 40vh;
 }
 
 
@@ -412,7 +412,7 @@ a:hover {
 	}
 	.navButton {
 		position: absolute;
-		top: 65vh;
+		top: 61vh;
 		font-size: 10vw;
 	}
 	#next {
@@ -424,7 +424,7 @@ a:hover {
 		z-index: 3;
 	}
 	#contactDetails h1 {
-		font-size: 6.75vw;
+		font-size: 6.5vw;
 	}
 	#contactDetails h2 {
 		font-size: 5vw;
@@ -501,20 +501,17 @@ a:hover {
 	padding-top:0;
 	z-index: 0;
 	}
-	 /* .detailsBackground:before {
-	opacity: 0.0;
-	}   */
+
 	#description div:first-child
 	{
-	font-size: 8vw;
+	font-size: 6.25vw;
 	color: rgb(33, 7, 79);
-	top: -2vh;
-	font-weight: 400;
+	font-weight: 500;
 	letter-spacing: 0.5px;
 	}
 	#description div:nth-child(2n)
 	{ 
-	font-size: 3.5vw;
+	font-size: 4vw;
 	color: rgb(34, 31, 31);
 	padding-top:2vh;
 	letter-spacing: 1px;
@@ -526,8 +523,7 @@ a:hover {
 	color: rgb(122, 120, 120);
 	padding-top: 1vh;
 	overflow:scroll;
-	height: 17vh;
-
+	height: 20vh;
 	}
 }
 
