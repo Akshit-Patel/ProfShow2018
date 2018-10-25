@@ -19,18 +19,18 @@ var profShows=
 {
     name_Of_Event:["Hindi ProfShow","English ProfShow","EDM Night","N2O","Classical ProfShow"],
     details: {
-      date:["DAY 3","DAY 2","DAY 4","DAY 5","DAY 3"],
-      time:["8:30 PM","8:30 PM","9:30 PM","7:00 PM"," 6:00 PM"],
-      venue:["SR Grounds","Audi","SR  Grounds","Audi","Audi"]
+    	name_Of_Artist:["Shankar-Ehsaan-Loy", "Guthrie Govan", "Wolfpack", "Abhishek & Jaspreet", "Indosoul"],
+    	date:["DAY 3","DAY 2","DAY 4","DAY 5","DAY 3"],
+    	time:["8:30 PM","8:30 PM","9:30 PM","7:00 PM"," 6:00 PM"],
+    	venue:["SR Grounds","Audi","SR  Grounds","Audi","Audi"]
     },
     description:[
-    "Oasis brings you a four hour long extravaganza of Electronic Music Festival, a night boasting of one of the best EDM line-ups in India, one night after every crescendo, you will dive backdown giddy and breathless, until all there will be left with silence that was at the beginning"
-    ,"Oasis brings you a four hour long extravaganza of Electronic Music Festival, a night boasting of one of the best EDM line-ups in India, one night after every crescendo, you will dive backdown giddy and breathless, until all there will be left with silence that was at the beginning"
-    ,"Oasis brings you a four hour long extravaganza of Electronic Music Festival, a night boasting of one of the best EDM line-ups in India, one night after every crescendo, you will dive backdown giddy and breathless, until all there will be left with silence that was at the beginning"
-    ,"Oasis brings you a four hour long extravaganza of Electronic Music Festival, a night boasting of one of the best EDM line-ups in India, one night after every crescendo, you will dive backdown giddy and breathless, until all there will be left with silence that was at the beginning"
-    ,"Oasis brings you a four hour long extravaganza of Electronic Music Festival, a night boasting of one of the best EDM line-ups in India, one night after every crescendo, you will dive backdown giddy and breathless, until all there will be left with silence that was at the beginning"
-    ,"Oasis brings you a four hour long extravaganza of Electronic Music Festival, a night boasting of one of the best EDM line-ups in India, one night after every crescendo, you will dive backdown giddy and breathless, until all there will be left with silence that was at the beginning"
-]
+    "This Oasis, we proudly present to you the melodious trio of <b>Shankar-Ehsaan-Loy</b>. India's most well renowned music trio, Shankar-Ehsaan-Loy have composed music for over 50 soundtracks across 5 different languages. They are most critically acclaimed Indian musicians who have won numerous awards, including National Film Award, IIFA award and in 2010, they were honoured with the Years of excellence at the Jack Daniel's Annual Rock Awards."
+	,"We are proud to present to you the most awaited Prof Show for Oasis 2018! From collaborations with artists like Steven Wilson and Hans Zimmer to being the architect of mind-boggling solo prog-rock projects like Erotic Cakes, <b>Guthrie Govan</b> has been known for recording the most immaculate solos without any retakes.This year we bring you a musical night, the First International Prof show for Oasis, starring Guthrie Govan, and featuring Mohini Dey and Gino Banks."
+    ,"<b>Wolfpack</b>, a Belgian DJ duo who is currently ranked 35th on DJ Mag, and have been one of the top 100 EDM artists, internationally since 2014. Appreciated for their electro-house style, Wolfpack has collaborated the likes of Dimitri Vegas & Like Mike, Steve Aoki and NERVO. They've also been one of the headliners for the biggest EDM event, Tomorrowland 2018!"
+    ,"Presenting before you, the blockbuster duo for Oasis' very own standup show, N2O! First up, to blow your socks off, we have one of the subjects of the much famed <b>Abhishek Upmanyu</b>. And if that doesn't leave you in splits, <b>Jaspreet Singh</b>, is all set to tickle your funny bone. Get set for an amazing evening as this comic duo gears up to take you on the ride of your lifetime!"
+    ,"What is it about “good” music that strikes such a deep chord with us - no matter where it comes from? Who better to take us on a musical journey to answer this question than Karthick Iyer and his own unique style of music called <b>IndoSoul</b>. An electric violin, a mridangam, an acoustic guitar, bass and drums along with vocals form the core of the band. Often seen collaborating with stalwarts like A.R. Rahman, the band breaks down superficial barriers between genres, instruments, cultures and languages to bring out the deep commonalities that define Indosoul."
+  	]
 }
 var centerTop;
 var othersTop;
@@ -451,8 +451,8 @@ function addDetails(x)
     setTimeout(function(){
     document.getElementById("detailsBackground").style.opacity=1;
     },5);  
-     textDetails.innerHTML="<div id='description'><div>"+profShows.name_Of_Event[x]+"</div><div>"+profShows.details.time[x] +", "+ 
-    profShows.details.venue[x]+"<br>"+ profShows.details.date[x]+"</div><div>"+profShows.description[x]+"</div></div>";
+    textDetails.innerHTML="<div id='description'><div>"+profShows.name_Of_Event[x]+"</div><div>"+ profShows.details.name_Of_Artist[x]+"<br>"+ 
+    profShows.details.date[x]+", "+profShows.details.venue[x]+", "+profShows.details.time[x]+"</div><div>"+profShows.description[x]+"</div></div>";
     setTimeout(function(){document.getElementById("description").style.opacity=1;},5);   
 }
 
@@ -466,10 +466,14 @@ function open(){
     c++;
     if(c==1)
     {   
+
+    if(window.innerWidth>=500)
+    {
         if(typeof document.getElementsByTagName("h3") !== "undefined" && document.getElementsByTagName("h3") != null)
         document.getElementsByTagName("h3")[0].style.display="none";
         if(typeof document.getElementsByTagName("h4") !== "undefined" && document.getElementsByTagName("h3") != null)
         document.getElementsByTagName("h4")[0].style.display="none";
+	}
         center.style.transition="0.5s";
         center.style.zIndex = 10;
         document.getElementById("detailsBackground").style.display="block";
@@ -567,7 +571,13 @@ function closeContactDetails()
         details.style.display="none";
         close.style.display="none";
     }, 500);
-    enable();
+    if(window.innerWidth>=500)
+    {
+    	if(document.getElementById("detailsBackground").style.display==="none")
+    		enable();
+    }
+    else
+    	enable();
 }
 
 //to show the name of profshow and its breif description
@@ -577,7 +587,7 @@ function breifDescription()
     if(typeof document.getElementsByTagName("h3") !== "undefined" && document.getElementsByTagName("h3") != null)
      setTimeout(function() {document.getElementsByTagName("h3")[0].style.opacity=1;}, 5);  
 
-     document.getElementById("breifDescription").innerHTML+="<center><h4>"+profShows.details.time[currentEvent] +", "+profShows.details.venue[currentEvent]+"<br>"+ profShows.details.date[currentEvent]+"</h4></center>";
+     document.getElementById("breifDescription").innerHTML+="<center><h4>"+"<br>"+ profShows.details.name_Of_Artist[currentEvent]+"<br>"+ profShows.details.date[currentEvent]+", "+" "+profShows.details.venue[currentEvent]+", "+" "+profShows.details.time[currentEvent]+"</h4></center>";
      if(typeof document.getElementsByTagName("h4") !== "undefined" && document.getElementsByTagName("h4") != null)
      setTimeout(function() {document.getElementsByTagName("h4")[0].style.opacity=1;}, 5); 
 }
