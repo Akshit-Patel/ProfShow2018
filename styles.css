@@ -127,7 +127,7 @@ img {
 	background-size: cover;	
 }
 .img2{
-	background-image: url("8.jpg");
+	background-image: url("4.jpg");
 	background-size: cover;
 }
 
@@ -149,6 +149,9 @@ img {
 		  -ms-user-select: none; /* Internet Explorer/Edge */
 			  user-select: none; /* Non-prefixed version, currently
 									supported by Chrome and Opera */
+  
+   -webkit-tap-highlight-color: rgba(0,0,0,0);
+-webkit-tap-highlight-color: transparent; 
   }
 
   

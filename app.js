@@ -132,7 +132,8 @@ function responsiveChange(w)
         addDetails(currentEvent);
         document.getElementById("close").style.display="none";
         document.getElementById("next").className="fa fa-arrow-right navButton cursorChange";
-        document.getElementById("previous").className="fa fa-arrow-left navButton cursorChange"; 
+        document.getElementById("previous").className="fa fa-arrow-left navButton cursorChange";
+        center.className+=" noSelect";
     }
     else
     {
@@ -172,10 +173,12 @@ function responsiveChange(w)
 script.addEventListener("load", function(){
     enable();
    
-    window.addEventListener("keydown", enterCheck);
+    
     setPointers();
     if(window.innerWidth>=500)
-    {breifDescription();}
+    {breifDescription();
+    }
+    window.addEventListener("keydown", enterCheck);
 });
 
 function keyMove(){
@@ -221,8 +224,8 @@ function escapeCheck(){
 }
 
 function enterCheck(){
-    if (window.event.key == "Enter"){
-        open();
+    if (window.event.key == "Enter" && window.innerWidth >= 500){
+                open();
     }
 }
 
@@ -454,6 +457,7 @@ function addDetails(x)
     textDetails.innerHTML="<div id='description'><div>"+profShows.name_Of_Event[x]+"</div><div>"+ profShows.details.name_Of_Artist[x]+"<br>"+ 
     profShows.details.date[x]+", "+profShows.details.venue[x]+", "+profShows.details.time[x]+"</div><div>"+profShows.description[x]+"</div></div>";
     setTimeout(function(){document.getElementById("description").style.opacity=1;},5);   
+
 }
 
 //opening a particular profshow on click
@@ -555,6 +559,7 @@ function openContactDetails()
         var close=document.getElementById("closeContactDetails");
         close.style.opacity=1;
     }, 5);
+    window.removeEventListener("keydown", escapeCheck);
 }
 //to close contact details
 function closeContactDetails()
@@ -578,6 +583,8 @@ function closeContactDetails()
     }
     else
     	enable();
+
+    window.addEventListener("keydown", escapeCheck);
 }
 
 //to show the name of profshow and its breif description
